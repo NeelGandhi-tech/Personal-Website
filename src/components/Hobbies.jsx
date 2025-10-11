@@ -102,7 +102,7 @@ const Hobbies = () => {
   }, []);
 
   return (
-    <section id="hobbies" className="py-16 px-4 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 relative overflow-hidden">
+    <section id="hobbies" className="py-16 px-4 bg-gradient-to-br from-slate-800 via-blue-900 to-indigo-900 relative overflow-hidden">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         {/* Floating Sports Icons */}
@@ -132,16 +132,16 @@ const Hobbies = () => {
         {/* Section Header */}
         <div className="text-center mb-12">
           <div className="inline-block px-4 py-2 bg-gradient-to-r from-blue-500/20 to-indigo-500/20 border border-blue-400/30 rounded-full mb-4">
-            <span className="text-blue-600 text-sm font-medium tracking-wider uppercase">
+            <span className="text-blue-300 text-sm font-medium tracking-wider uppercase">
               Beyond Code
             </span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            <span className="bg-gradient-to-r from-slate-800 via-blue-800 to-indigo-800 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-white via-blue-200 to-indigo-200 bg-clip-text text-transparent">
               My Passions
             </span>
           </h2>
-          <p className="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed">
             When I'm not coding, you'll find me analyzing sports statistics, playing games, 
             cooking up delicious vegetarian meals, or strategizing at the poker table.
           </p>
@@ -157,13 +157,13 @@ const Hobbies = () => {
           ].map((stat, index) => (
             <div
               key={index}
-              className="bg-white/80 backdrop-blur-sm border border-white/50 rounded-xl p-4 text-center hover:bg-white/90 transition-all duration-300 hover:scale-105 shadow-lg"
+              className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-4 text-center hover:bg-white/20 transition-all duration-300 hover:scale-105 shadow-lg"
             >
               <stat.icon className={`${stat.color} text-2xl mx-auto mb-2`} />
-              <div className="text-2xl font-bold text-slate-800 mb-1">
+              <div className="text-2xl font-bold text-white mb-1">
                 {stat.value}+
               </div>
-              <div className="text-slate-600 text-xs">{stat.label}</div>
+              <div className="text-slate-300 text-xs">{stat.label}</div>
             </div>
           ))}
         </div>
@@ -173,7 +173,7 @@ const Hobbies = () => {
           {hobbies.map((hobby, index) => (
             <div
               key={hobby.id}
-              className={`group relative bg-white/80 backdrop-blur-sm border border-white/50 rounded-2xl p-6 hover:bg-white/90 transition-all duration-500 hover:scale-105 hover:shadow-xl`}
+              className={`group relative bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 hover:bg-white/20 transition-all duration-500 hover:scale-105 hover:shadow-xl`}
               onMouseEnter={() => setHoveredCard(hobby.id)}
               onMouseLeave={() => setHoveredCard(null)}
               style={{
@@ -187,10 +187,10 @@ const Hobbies = () => {
 
               {/* Hobby Content */}
               <div className="mb-4">
-                <h3 className="text-xl font-bold text-slate-800 mb-2 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-slate-800 group-hover:to-blue-800 transition-all duration-300">
+                <h3 className="text-xl font-bold text-white mb-2 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-blue-200 transition-all duration-300">
                   {hobby.title}
                 </h3>
-                <p className="text-slate-600 leading-relaxed text-sm">
+                <p className="text-slate-300 leading-relaxed text-sm">
                   {hobby.description}
                 </p>
               </div>
@@ -200,7 +200,7 @@ const Hobbies = () => {
                 {hobby.stats.map((stat, statIndex) => (
                   <span
                     key={statIndex}
-                    className={`px-2 py-1 bg-gradient-to-r ${hobby.color} bg-opacity-20 text-slate-700 text-xs rounded-full border border-white/50 group-hover:bg-opacity-30 transition-all duration-300`}
+                    className={`px-2 py-1 bg-gradient-to-r ${hobby.color} bg-opacity-20 text-white text-xs rounded-full border border-white/30 group-hover:bg-opacity-30 transition-all duration-300`}
                   >
                     {stat}
                   </span>
@@ -215,21 +215,6 @@ const Hobbies = () => {
           ))}
         </div>
 
-        {/* Bottom Quote */}
-        <div className="text-center mt-12">
-          <div className="inline-block p-6 bg-gradient-to-r from-blue-500/10 to-indigo-500/10 border border-blue-400/30 rounded-2xl backdrop-blur-sm">
-            <FaHeart className="text-red-400 text-xl mx-auto mb-3 animate-pulse" />
-            <p className="text-lg text-slate-600 italic">
-              "Life is about balance - coding with passion, playing with purpose, 
-              and cooking with love."
-            </p>
-            <div className="flex justify-center mt-3 space-x-2">
-              <FaBrain className="text-blue-400 animate-bounce" />
-              <FaFire className="text-orange-400 animate-bounce delay-100" />
-              <FaLeaf className="text-green-400 animate-bounce delay-200" />
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );
