@@ -1,9 +1,21 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { FaCode, FaCogs, FaTools, FaRocket, FaPython, FaJs, FaJava, FaReact, FaNode, FaDocker, FaGitAlt, FaBrain, FaDatabase, FaCloud, FaMobile } from 'react-icons/fa'
 
 const Skills = () => {
     const [hoveredSkill, setHoveredSkill] = useState(null)
     const [hoveredCategory, setHoveredCategory] = useState(null)
+    const [animatedSkills, setAnimatedSkills] = useState({})
+
+    useEffect(() => {
+        // Animate skills on mount
+        const timer = setTimeout(() => {
+            setAnimatedSkills(prev => ({
+                ...prev,
+                animate: true
+            }))
+        }, 500)
+        return () => clearTimeout(timer)
+    }, [])
 
     const skillCategories = [
       {
@@ -98,9 +110,11 @@ const Skills = () => {
             {skillCategories.map((category, index) => (
               <div
                 key={index}
-                className="group bg-white/90 backdrop-blur-sm p-6 rounded-xl shadow-xl hover:shadow-2xl hover:-translate-y-3 transition-all duration-500 border border-white/50 relative overflow-hidden"
+                className="group bg-white/90 backdrop-blur-sm p-6 rounded-xl shadow-xl hover:shadow-2xl hover:-translate-y-3 hover:rotate-1 transition-all duration-500 border border-white/50 relative overflow-hidden transform hover:scale-105"
                 style={{
-                  background: `linear-gradient(135deg, ${category.color === 'blue' ? 'rgba(59, 130, 246, 0.1)' : category.color === 'purple' ? 'rgba(147, 51, 234, 0.1)' : category.color === 'green' ? 'rgba(34, 197, 94, 0.1)' : 'rgba(249, 115, 22, 0.1)'}, rgba(255, 255, 255, 0.9))`
+                  background: `linear-gradient(135deg, ${category.color === 'blue' ? 'rgba(59, 130, 246, 0.1)' : category.color === 'purple' ? 'rgba(147, 51, 234, 0.1)' : category.color === 'green' ? 'rgba(34, 197, 94, 0.1)' : 'rgba(249, 115, 22, 0.1)'}, rgba(255, 255, 255, 0.9))`,
+                  animationDelay: `${index * 0.2}s`,
+                  transform: `perspective(1000px) rotateX(${hoveredCategory === index ? '5deg' : '0deg'})`
                 }}
                 onMouseEnter={() => setHoveredCategory(index)}
                 onMouseLeave={() => setHoveredCategory(null)}
@@ -143,14 +157,17 @@ const Skills = () => {
                         </div>
                         
                         {/* Progress bar */}
-                        <div className="w-full bg-slate-200 rounded-full h-2 overflow-hidden">
+                        <div className="w-full bg-slate-200 rounded-full h-2 overflow-hidden relative group-hover:scale-105 transition-transform duration-300">
                           <div 
-                            className={`h-full bg-gradient-to-r ${category.gradient} rounded-full transition-all duration-1000 ease-out`}
+                            className={`h-full bg-gradient-to-r ${category.gradient} rounded-full transition-all duration-1000 ease-out relative overflow-hidden`}
                             style={{ 
                               width: `${skill.level}%`,
                               transitionDelay: `${idx * 100}ms`
                             }}
-                          ></div>
+                          >
+                            {/* Shimmer effect */}
+                            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent transform -skew-x-12 animate-shimmer"></div>
+                          </div>
                         </div>
                         
                         {/* Skill popup */}

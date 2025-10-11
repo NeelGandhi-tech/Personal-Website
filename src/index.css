@@ -41,6 +41,61 @@ body {
   100% { transform: perspective(1000px) rotateX(0deg) rotateY(0deg); }
 }
 
+@keyframes slideInUp {
+  0% { 
+    transform: translateY(50px); 
+    opacity: 0; 
+  }
+  100% { 
+    transform: translateY(0); 
+    opacity: 1; 
+  }
+}
+
+@keyframes slideInLeft {
+  0% { 
+    transform: translateX(-50px); 
+    opacity: 0; 
+  }
+  100% { 
+    transform: translateX(0); 
+    opacity: 1; 
+  }
+}
+
+@keyframes slideInRight {
+  0% { 
+    transform: translateX(50px); 
+    opacity: 0; 
+  }
+  100% { 
+    transform: translateX(0); 
+    opacity: 1; 
+  }
+}
+
+@keyframes fadeInScale {
+  0% { 
+    transform: scale(0.8); 
+    opacity: 0; 
+  }
+  100% { 
+    transform: scale(1); 
+    opacity: 1; 
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { 
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+    transform: scale(1);
+  }
+  50% { 
+    box-shadow: 0 0 40px rgba(59, 130, 246, 0.6), 0 0 60px rgba(147, 51, 234, 0.4);
+    transform: scale(1.05);
+  }
+}
+
 .animate-float {
   animation: float 6s ease-in-out infinite;
 }
@@ -55,6 +110,26 @@ body {
 
 .animate-rotate3d {
   animation: rotate3d 8s ease-in-out infinite;
+}
+
+.animate-slideInUp {
+  animation: slideInUp 0.8s ease-out forwards;
+}
+
+.animate-slideInLeft {
+  animation: slideInLeft 0.8s ease-out forwards;
+}
+
+.animate-slideInRight {
+  animation: slideInRight 0.8s ease-out forwards;
+}
+
+.animate-fadeInScale {
+  animation: fadeInScale 0.6s ease-out forwards;
+}
+
+.animate-pulseGlow {
+  animation: pulseGlow 2s ease-in-out infinite;
 }
 
 /* Custom 3D effects */

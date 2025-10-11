@@ -1,6 +1,17 @@
+import { useState, useEffect } from 'react'
 import { FaGithub, FaExternalLinkAlt, FaBrain, FaChartLine, FaCogs, FaCode } from 'react-icons/fa'
 
 const Projects = () => {
+    const [hoveredProject, setHoveredProject] = useState(null)
+    const [animatedProjects, setAnimatedProjects] = useState(false)
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setAnimatedProjects(true)
+        }, 300)
+        return () => clearTimeout(timer)
+    }, [])
+
     const projects = [
       {
         title: 'NeuroEcho',
@@ -62,7 +73,13 @@ const Projects = () => {
             {projects.map((project, index) => (
               <div
                 key={index}
-                className="group bg-white/80 backdrop-blur-sm rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-4 transition-all duration-500 border border-white/50 relative"
+                className="group bg-white/80 backdrop-blur-sm rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-4 hover:rotate-1 transition-all duration-500 border border-white/50 relative transform hover:scale-105"
+                style={{
+                  animationDelay: `${index * 0.2}s`,
+                  transform: `perspective(1000px) rotateX(${hoveredProject === index ? '5deg' : '0deg'})`
+                }}
+                onMouseEnter={() => setHoveredProject(index)}
+                onMouseLeave={() => setHoveredProject(null)}
               >
                 {/* Project header with gradient */}
                 <div className={`bg-gradient-to-br ${project.gradient} p-6 text-white relative overflow-hidden`}>

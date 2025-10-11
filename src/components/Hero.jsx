@@ -10,24 +10,24 @@ const Hero = () => {
         <div className="absolute w-80 h-80 bg-purple-500/20 rounded-full blur-3xl -bottom-40 -left-40 animate-pulse delay-1000 transform -rotate-12"></div>
         <div className="absolute w-64 h-64 bg-cyan-500/20 rounded-full blur-3xl top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 animate-pulse delay-500 rotate-45"></div>
         
-        {/* Floating tech icons with 3D effects */}
-        <div className="absolute top-20 left-10 text-blue-400/40 text-5xl animate-bounce delay-300 transform hover:scale-110 transition-transform duration-300">
-          <FaCode className="drop-shadow-lg" />
+        {/* Floating tech icons with advanced 3D effects */}
+        <div className="absolute top-20 left-10 text-blue-400/40 text-5xl animate-float delay-300 transform hover:scale-110 hover:rotate-12 transition-all duration-500 cursor-pointer">
+          <FaCode className="drop-shadow-lg hover:drop-shadow-2xl" style={{ filter: 'drop-shadow(0 0 10px rgba(59, 130, 246, 0.5))' }} />
         </div>
-        <div className="absolute top-40 right-20 text-purple-400/40 text-4xl animate-bounce delay-700 transform hover:scale-110 transition-transform duration-300">
-          <FaRocket className="drop-shadow-lg" />
+        <div className="absolute top-40 right-20 text-purple-400/40 text-4xl animate-float delay-700 transform hover:scale-110 hover:-rotate-12 transition-all duration-500 cursor-pointer">
+          <FaRocket className="drop-shadow-lg hover:drop-shadow-2xl" style={{ filter: 'drop-shadow(0 0 10px rgba(147, 51, 234, 0.5))' }} />
         </div>
-        <div className="absolute bottom-40 left-20 text-cyan-400/40 text-4xl animate-bounce delay-1000 transform hover:scale-110 transition-transform duration-300">
-          <FaBrain className="drop-shadow-lg" />
+        <div className="absolute bottom-40 left-20 text-cyan-400/40 text-4xl animate-float delay-1000 transform hover:scale-110 hover:rotate-12 transition-all duration-500 cursor-pointer">
+          <FaBrain className="drop-shadow-lg hover:drop-shadow-2xl" style={{ filter: 'drop-shadow(0 0 10px rgba(6, 182, 212, 0.5))' }} />
         </div>
-        <div className="absolute top-60 left-1/4 text-green-400/40 text-3xl animate-bounce delay-500 transform hover:scale-110 transition-transform duration-300">
-          <FaTerminal className="drop-shadow-lg" />
+        <div className="absolute top-60 left-1/4 text-green-400/40 text-3xl animate-float delay-500 transform hover:scale-110 hover:-rotate-12 transition-all duration-500 cursor-pointer">
+          <FaTerminal className="drop-shadow-lg hover:drop-shadow-2xl" style={{ filter: 'drop-shadow(0 0 10px rgba(34, 197, 94, 0.5))' }} />
         </div>
-        <div className="absolute top-80 right-1/3 text-yellow-400/40 text-3xl animate-bounce delay-1200 transform hover:scale-110 transition-transform duration-300">
-          <FaDatabase className="drop-shadow-lg" />
+        <div className="absolute top-80 right-1/3 text-yellow-400/40 text-3xl animate-float delay-1200 transform hover:scale-110 hover:rotate-12 transition-all duration-500 cursor-pointer">
+          <FaDatabase className="drop-shadow-lg hover:drop-shadow-2xl" style={{ filter: 'drop-shadow(0 0 10px rgba(234, 179, 8, 0.5))' }} />
         </div>
-        <div className="absolute bottom-60 right-10 text-red-400/40 text-3xl animate-bounce delay-800 transform hover:scale-110 transition-transform duration-300">
-          <FaMicrochip className="drop-shadow-lg" />
+        <div className="absolute bottom-60 right-10 text-red-400/40 text-3xl animate-float delay-800 transform hover:scale-110 hover:-rotate-12 transition-all duration-500 cursor-pointer">
+          <FaMicrochip className="drop-shadow-lg hover:drop-shadow-2xl" style={{ filter: 'drop-shadow(0 0 10px rgba(239, 68, 68, 0.5))' }} />
         </div>
         
         {/* Animated code brackets */}
