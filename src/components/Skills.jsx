@@ -85,7 +85,7 @@ const Skills = () => {
     ]
   
     return (
-      <section id="skills" className="py-12 px-4 bg-slate-50 relative overflow-hidden">
+      <section id="skills" className="py-12 px-4 bg-gradient-to-br from-indigo-50 via-purple-50 to-blue-50 relative overflow-hidden">
         {/* Simple background decoration */}
         <div className="absolute inset-0">
           <div className="absolute top-20 right-20 w-4 h-4 bg-blue-400/30 rotate-45 animate-bounce delay-300"></div>

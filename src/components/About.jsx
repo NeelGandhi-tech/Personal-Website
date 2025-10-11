@@ -185,7 +185,7 @@ const About = () => {
     }
   
     return (
-      <section id="about" className="py-6 px-4 bg-gradient-to-br from-slate-50 via-blue-50 to-purple-50 relative overflow-hidden">
+      <section id="about" className="py-6 px-4 bg-gradient-to-br from-blue-50 via-slate-50 to-indigo-50 relative overflow-hidden">
         {/* Enhanced background elements */}
         <div className="absolute inset-0">
           <div className="absolute w-80 h-80 bg-blue-400/20 rounded-full blur-3xl -top-40 -left-40 animate-pulse"></div>

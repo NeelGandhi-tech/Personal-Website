@@ -36,7 +36,7 @@ const Contact = () => {
   ]
 
   return (
-    <section id="contact" className="py-20 px-4 bg-gradient-to-br from-dark via-darkBlue to-darkBlue text-white">
+    <section id="contact" className="py-20 px-4 bg-gradient-to-br from-indigo-50 via-purple-50 to-slate-900 text-white">
       <div className="max-w-3xl mx-auto text-center">
         <h2 className="text-4xl md:text-5xl font-bold mb-6">
           Get In Touch
