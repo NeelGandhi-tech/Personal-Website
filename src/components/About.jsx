@@ -90,17 +90,17 @@ const About = () => {
                 </div>
               </div>
               
-              <div className="space-y-4 text-lg text-slate-600 leading-relaxed">
+              <div className="space-y-3 text-base text-slate-600 leading-relaxed">
                 <p>
-                  Hi there! I'm <span className="font-semibold text-slate-800">Neel</span>. I'm a Computer Science student at UC Berkeley, passionate about building innovative solutions that make a real impact.
+                  Hi there! I'm <span className="font-semibold text-slate-800">Neel</span>, a Computer Science student at UC Berkeley passionate about building innovative solutions.
                 </p>
                 
                 <p>
-                  Here's a quick rundown of what I've done. I built <a href="#projects" className="underline text-blue-600 hover:text-blue-800 font-medium">NeuroEcho</a>, a healthcare startup developing smart IoT devices for Alzheimer's patients with a filed provisional patent. I also work on <a href="#projects" className="underline text-blue-600 hover:text-blue-800 font-medium">FFB-Predictor</a>, an end-to-end fantasy football analytics pipeline that achieves 15% better accuracy than baseline models.
+                  I built <a href="#projects" className="underline text-blue-600 hover:text-blue-800 font-medium">NeuroEcho</a>, a healthcare startup with a filed provisional patent, and <a href="#projects" className="underline text-blue-600 hover:text-blue-800 font-medium">FFB-Predictor</a>, a fantasy football analytics pipeline with 15% better accuracy.
                 </p>
                 
                 <p>
-                  I also love <span className="underline text-blue-600 hover:text-blue-800 font-medium cursor-pointer">machine learning</span> and <span className="underline text-blue-600 hover:text-blue-800 font-medium cursor-pointer">full-stack development</span>. Right now, I'm continuing to work on innovative projects and exploring the intersection of AI and healthcare. Feel free to reach out at <a href="mailto:neelgandhi5416@berkeley.edu" className="underline text-blue-600 hover:text-blue-800 font-medium">my email</a>!
+                  I love <span className="underline text-blue-600 hover:text-blue-800 font-medium cursor-pointer">machine learning</span> and <span className="underline text-blue-600 hover:text-blue-800 font-medium cursor-pointer">full-stack development</span>. Feel free to reach out at <a href="mailto:neelgandhi5416@berkeley.edu" className="underline text-blue-600 hover:text-blue-800 font-medium">my email</a>!
                 </p>
               </div>
 
@@ -124,12 +124,12 @@ const About = () => {
             </div>
 
             {/* Profile Picture */}
-            <div className="lg:w-96 w-full flex justify-center lg:justify-end">
+            <div className="lg:w-[500px] w-full flex justify-center lg:justify-end">
               <div className="relative">
                 <img
                   src="/407A0016.JPG"
                   alt="Neel Gandhi"
-                  className="w-80 h-96 object-cover rounded-2xl shadow-2xl border-4 border-white"
+                  className="w-96 h-[480px] object-cover rounded-2xl shadow-2xl border-4 border-white"
                 />
                 <div className="absolute -bottom-4 -right-4 w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center shadow-lg">
                   <FaUser className="text-white text-xl" />
