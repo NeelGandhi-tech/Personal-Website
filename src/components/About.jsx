@@ -90,17 +90,21 @@ const About = () => {
                 </div>
               </div>
               
-              <div className="space-y-3 text-base text-slate-600 leading-relaxed">
+              <div className="space-y-4 text-lg text-slate-600 leading-relaxed">
                 <p>
-                  Hi there! I'm <span className="font-semibold text-slate-800">Neel</span>, a Computer Science student at UC Berkeley passionate about building innovative solutions.
+                  Hi there! I'm <span className="font-semibold text-slate-800">Neel</span>, a Computer Science student at UC Berkeley passionate about building innovative solutions that make a real impact in the world.
                 </p>
                 
                 <p>
-                  I built <a href="#projects" className="underline text-blue-600 hover:text-blue-800 font-medium">NeuroEcho</a>, a healthcare startup with a filed provisional patent, and <a href="#projects" className="underline text-blue-600 hover:text-blue-800 font-medium">FFB-Predictor</a>, a fantasy football analytics pipeline with 15% better accuracy.
+                  Here's a quick rundown of what I've accomplished. I built <a href="#projects" className="text-blue-600 hover:text-blue-800 font-medium transition-colors duration-300">NeuroEcho</a>, a healthcare startup developing smart IoT devices for Alzheimer's patients with a filed provisional patent. I also work on <a href="#projects" className="text-blue-600 hover:text-blue-800 font-medium transition-colors duration-300">FFB-Predictor</a>, an end-to-end fantasy football analytics pipeline that achieves 15% better accuracy than baseline models.
                 </p>
                 
                 <p>
-                  I love <span className="underline text-blue-600 hover:text-blue-800 font-medium cursor-pointer">machine learning</span> and <span className="underline text-blue-600 hover:text-blue-800 font-medium cursor-pointer">full-stack development</span>. Feel free to reach out at <a href="mailto:neelgandhi5416@berkeley.edu" className="underline text-blue-600 hover:text-blue-800 font-medium">my email</a>!
+                  I also love <span className="text-blue-600 hover:text-blue-800 font-medium cursor-pointer transition-colors duration-300">machine learning</span> and <span className="text-blue-600 hover:text-blue-800 font-medium cursor-pointer transition-colors duration-300">full-stack development</span>. Right now, I'm continuing to work on innovative projects and exploring the intersection of AI and healthcare. I'm always excited to collaborate on new ideas and push the boundaries of what's possible with technology.
+                </p>
+                
+                <p>
+                  Feel free to reach out at <a href="mailto:neelgandhi5416@berkeley.edu" className="text-blue-600 hover:text-blue-800 font-medium transition-colors duration-300">my email</a> if you'd like to connect or discuss potential opportunities!
                 </p>
               </div>
 

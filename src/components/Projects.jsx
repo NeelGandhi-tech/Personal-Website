@@ -21,7 +21,8 @@ const Projects = () => {
         icon: <FaBrain />,
         gradient: 'from-purple-500 to-pink-500',
         status: 'Patent Filed',
-        impact: 'Healthcare Innovation'
+        impact: 'Healthcare Innovation',
+        backgroundImage: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80'
       },
       {
         title: 'FFB-Predictor',
@@ -31,7 +32,8 @@ const Projects = () => {
         icon: <FaChartLine />,
         gradient: 'from-blue-500 to-cyan-500',
         status: 'ML Pipeline',
-        impact: '15% Better Accuracy'
+        impact: '15% Better Accuracy',
+        backgroundImage: 'https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80'
       },
       {
         title: 'Physical Therapy IOT',
@@ -41,7 +43,8 @@ const Projects = () => {
         icon: <FaCogs />,
         gradient: 'from-green-500 to-emerald-500',
         status: 'Production Ready',
-        impact: '78% Time Reduction'
+        impact: '78% Time Reduction',
+        backgroundImage: 'https://images.unsplash.com/photo-1559757175-0eb30cd8c063?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80'
       },
     ]
   
@@ -81,21 +84,34 @@ const Projects = () => {
                 onMouseEnter={() => setHoveredProject(index)}
                 onMouseLeave={() => setHoveredProject(null)}
               >
-                {/* Project header with gradient */}
-                <div className={`bg-gradient-to-br ${project.gradient} p-6 text-white relative overflow-hidden`}>
-                  <div className="absolute inset-0 bg-black/10"></div>
-                  <div className="relative z-10">
+                {/* Project header with background image */}
+                <div className="relative p-6 text-white overflow-hidden h-48">
+                  {/* Background Image */}
+                  <div 
+                    className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+                    style={{
+                      backgroundImage: `url(${project.backgroundImage})`
+                    }}
+                  ></div>
+                  
+                  {/* Gradient Overlay */}
+                  <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-80`}></div>
+                  
+                  {/* Content */}
+                  <div className="relative z-10 h-full flex flex-col justify-between">
                     <div className="flex items-center justify-between mb-4">
-                      <div className="text-3xl opacity-80">
+                      <div className="text-3xl opacity-90">
                         {project.icon}
                       </div>
                       <div className="text-xs bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full font-medium">
                         {project.status}
                       </div>
                     </div>
-                    <h3 className="text-2xl font-bold mb-2">{project.title}</h3>
-                    <div className="text-sm opacity-90 font-medium">
-                      {project.impact}
+                    <div>
+                      <h3 className="text-2xl font-bold mb-2">{project.title}</h3>
+                      <div className="text-sm opacity-90 font-medium">
+                        {project.impact}
+                      </div>
                     </div>
                   </div>
                   
