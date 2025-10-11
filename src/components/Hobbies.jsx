@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { 
-  FaFootball, 
+  FaFootballBall, 
   FaBasketballBall, 
   FaGolfBall, 
   FaTableTennis, 
@@ -71,7 +71,7 @@ const Hobbies = () => {
   ];
 
   const sportsIcons = [
-    { icon: FaFootball, color: 'text-blue-400', delay: 'delay-0' },
+    { icon: FaFootballBall, color: 'text-blue-400', delay: 'delay-0' },
     { icon: FaBasketballBall, color: 'text-orange-400', delay: 'delay-100' },
     { icon: FaGolfBall, color: 'text-green-400', delay: 'delay-200' },
     { icon: FaTableTennis, color: 'text-yellow-400', delay: 'delay-300' },
