@@ -44,7 +44,7 @@ const Projects = () => {
         gradient: 'from-green-500 to-emerald-500',
         status: 'Production Ready',
         impact: '78% Time Reduction',
-        backgroundImage: 'https://images.unsplash.com/photo-1559757175-0eb30cd8c063?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80'
+        backgroundImage: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80'
       },
     ]
   
