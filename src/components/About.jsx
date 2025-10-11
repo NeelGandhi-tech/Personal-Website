@@ -8,6 +8,17 @@ const About = () => {
     experience: 0
   });
 
+  const [currentTagline, setCurrentTagline] = useState(0);
+
+  const taglines = [
+    "I am an innovator",
+    "I am a changer",
+    "I am a builder",
+    "I am a problem solver",
+    "I am a dreamer",
+    "I am a creator"
+  ];
+
   useEffect(() => {
     const animateStats = () => {
       setAnimatedStats({
@@ -27,6 +38,14 @@ const About = () => {
 
     animateStats();
   }, []);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentTagline((prev) => (prev + 1) % taglines.length);
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, [taglines.length]);
 
   const socialLinks = [
     { icon: <FaLinkedin />, href: 'https://linkedin.com/in/neel-gandhi0', label: 'LinkedIn' },
@@ -57,6 +76,18 @@ const About = () => {
                 <h2 className="text-4xl md:text-5xl font-bold text-slate-800">
                   A Bit About Me.
                 </h2>
+              </div>
+              
+              {/* Animated Tagline */}
+              <div className="mb-6">
+                <div className="text-2xl md:text-3xl font-semibold text-slate-700 h-12 flex items-center">
+                  <span 
+                    key={currentTagline}
+                    className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent animate-taglineFade"
+                  >
+                    {taglines[currentTagline]}
+                  </span>
+                </div>
               </div>
               
               <div className="space-y-4 text-lg text-slate-600 leading-relaxed">
