@@ -124,12 +124,12 @@ const About = () => {
             </div>
 
             {/* Profile Picture */}
-            <div className="lg:w-80 w-full flex justify-center lg:justify-end">
+            <div className="lg:w-96 w-full flex justify-center lg:justify-end">
               <div className="relative">
                 <img
                   src="/407A0016.JPG"
                   alt="Neel Gandhi"
-                  className="w-64 h-80 object-cover rounded-2xl shadow-2xl border-4 border-white"
+                  className="w-80 h-96 object-cover rounded-2xl shadow-2xl border-4 border-white"
                 />
                 <div className="absolute -bottom-4 -right-4 w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center shadow-lg">
                   <FaUser className="text-white text-xl" />
@@ -147,7 +147,7 @@ const About = () => {
           
           <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
             {/* Impact Cards */}
-            <div className="bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl p-8 text-white shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+            <div className="bg-gradient-to-br from-blue-400 to-cyan-500 rounded-2xl p-8 text-white shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
               <div className="text-4xl font-bold mb-2">
                 {animatedStats.projects}+
               </div>
@@ -156,20 +156,20 @@ const About = () => {
               </div>
             </div>
             
-            <div className="bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl p-8 text-white shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+            <div className="bg-gradient-to-br from-cyan-400 to-blue-500 rounded-2xl p-8 text-white shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
               <div className="text-4xl font-bold mb-2">
                 {animatedStats.impact.toLocaleString()}+
               </div>
-              <div className="text-green-100 text-sm">
+              <div className="text-cyan-100 text-sm">
                 Lines of Code
               </div>
             </div>
             
-            <div className="bg-gradient-to-br from-orange-500 to-red-600 rounded-2xl p-8 text-white shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+            <div className="bg-gradient-to-br from-indigo-400 to-blue-500 rounded-2xl p-8 text-white shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
               <div className="text-4xl font-bold mb-2">
                 {animatedStats.experience}+
               </div>
-              <div className="text-orange-100 text-sm">
+              <div className="text-indigo-100 text-sm">
                 Years Experience
               </div>
             </div>
