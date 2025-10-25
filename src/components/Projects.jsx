@@ -22,7 +22,9 @@ const Projects = () => {
         gradient: 'from-purple-500 to-pink-500',
         status: 'Patent Filed',
         impact: 'Healthcare Innovation',
-        backgroundImage: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80'
+        backgroundImage: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+        githubLink: null,
+        demoLink: null
       },
       {
         title: 'FFB-Predictor',
@@ -33,10 +35,12 @@ const Projects = () => {
         gradient: 'from-blue-500 to-cyan-500',
         status: 'ML Pipeline',
         impact: '15% Better Accuracy',
-        backgroundImage: 'https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80'
+        backgroundImage: 'https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+        githubLink: 'https://github.com/NeelGandhi-tech/nfl-fantasy-predictor',
+        demoLink: null
       },
       {
-        title: 'Physical Therapy IOT',
+        title: 'Methuselah IoT',
         description:
           'IoT web app integrating 8 devices to import and organize client media with searchable dashboard. Implemented PDF export functionality reducing therapist reporting time by 78%.',
         tech: ['Flask', 'MySQL', 'HTML/CSS', 'ReportLab'],
@@ -44,8 +48,49 @@ const Projects = () => {
         gradient: 'from-green-500 to-emerald-500',
         status: 'Production Ready',
         impact: '78% Time Reduction',
-        backgroundImage: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80'
+        backgroundImage: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+        githubLink: 'https://github.com/NeelGandhi-tech/MethuselahIOT',
+        demoLink: null
       },
+      {
+        title: 'SAT Class Website',
+        description:
+          'Modern educational platform for SAT preparation with interactive lessons, practice tests, and progress tracking. Built with React and deployed on Netlify for seamless student experience.',
+        tech: ['React', 'JavaScript', 'Tailwind CSS', 'Netlify'],
+        icon: <FaCode />,
+        gradient: 'from-indigo-500 to-purple-500',
+        status: 'Live Website',
+        impact: 'Educational Platform',
+        backgroundImage: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+        githubLink: 'https://github.com/NeelGandhi-tech/SAT-Class',
+        demoLink: 'https://app.netlify.com/projects/sat-bears/overview'
+      },
+      {
+        title: 'Innovate at Berkeley',
+        description:
+          'Official website for Berkeley\'s innovation hub featuring startup showcases, event management, and community engagement. Built with modern web technologies and deployed for maximum accessibility.',
+        tech: ['React', 'Node.js', 'MongoDB', 'AWS'],
+        icon: <FaRocket />,
+        gradient: 'from-orange-500 to-red-500',
+        status: 'Live Website',
+        impact: 'University Platform',
+        backgroundImage: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+        githubLink: 'https://github.com/NeelGandhi-tech/Innovate-Berkeley',
+        demoLink: 'https://berkeleyinnovate.com/'
+      },
+      {
+        title: 'Coming Soon',
+        description:
+          'Stay tuned for more exciting projects! I\'m constantly working on new innovations and will be adding more projects here soon.',
+        tech: ['TBA'],
+        icon: <FaCog />,
+        gradient: 'from-gray-500 to-slate-500',
+        status: 'In Development',
+        impact: 'Future Innovation',
+        backgroundImage: 'https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+        githubLink: null,
+        demoLink: null
+      }
     ]
   
     return (
@@ -136,16 +181,40 @@ const Projects = () => {
                     ))}
                   </div>
                   
-                  <div className="flex gap-3">
-                    <button className="flex-1 px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg font-medium transition-colors duration-200 flex items-center justify-center gap-2 text-sm">
-                      <FaGithub size={14} />
-                      Code
-                    </button>
-                    <button className="flex-1 px-4 py-2 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white rounded-lg font-medium transition-all duration-200 flex items-center justify-center gap-2 text-sm">
-                      <FaExternalLinkAlt size={14} />
-                      Demo
-                    </button>
-                  </div>
+                      <div className="flex gap-3">
+                        {project.githubLink ? (
+                          <a
+                            href={project.githubLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex-1 px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg font-medium transition-colors duration-200 flex items-center justify-center gap-2 text-sm"
+                          >
+                            <FaGithub size={14} />
+                            Code
+                          </a>
+                        ) : (
+                          <button className="flex-1 px-4 py-2 bg-slate-100 text-slate-400 rounded-lg font-medium cursor-not-allowed flex items-center justify-center gap-2 text-sm">
+                            <FaGithub size={14} />
+                            Code
+                          </button>
+                        )}
+                        {project.demoLink ? (
+                          <a
+                            href={project.demoLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex-1 px-4 py-2 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white rounded-lg font-medium transition-all duration-200 flex items-center justify-center gap-2 text-sm"
+                          >
+                            <FaExternalLinkAlt size={14} />
+                            Demo
+                          </a>
+                        ) : (
+                          <button className="flex-1 px-4 py-2 bg-slate-100 text-slate-400 rounded-lg font-medium cursor-not-allowed flex items-center justify-center gap-2 text-sm">
+                            <FaExternalLinkAlt size={14} />
+                            Demo
+                          </button>
+                        )}
+                      </div>
                 </div>
               </div>
             ))}
