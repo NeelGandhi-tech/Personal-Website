@@ -2,7 +2,7 @@ import { FaGithub, FaLinkedin, FaEnvelope, FaCode, FaRocket, FaBrain, FaCog, FaT
 
 const Hero = () => {
   return (
-    <section className="relative bg-gradient-to-br from-slate-900 via-blue-900 to-purple-900 text-white pt-24 pb-16 px-4 overflow-hidden h-screen flex items-center">
+    <section className="relative text-white pt-24 pb-16 px-4 overflow-hidden h-screen flex items-center bg-gradient-to-br from-slate-900 via-blue-900 to-purple-900">
       {/* Enhanced animated background elements */}
       <div className="absolute inset-0">
         {/* Main floating orbs with 3D rotation */}

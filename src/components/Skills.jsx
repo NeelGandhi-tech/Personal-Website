@@ -2,20 +2,6 @@ import { useState, useEffect } from 'react'
 import { FaCode, FaCogs, FaTools, FaRocket, FaPython, FaJs, FaJava, FaReact, FaNode, FaDocker, FaGitAlt, FaBrain, FaDatabase, FaCloud, FaMobile } from 'react-icons/fa'
 
 const Skills = () => {
-    const [hoveredSkill, setHoveredSkill] = useState(null)
-    const [hoveredCategory, setHoveredCategory] = useState(null)
-    const [animatedSkills, setAnimatedSkills] = useState({})
-
-    useEffect(() => {
-        // Animate skills on mount
-        const timer = setTimeout(() => {
-            setAnimatedSkills(prev => ({
-                ...prev,
-                animate: true
-            }))
-        }, 500)
-        return () => clearTimeout(timer)
-    }, [])
 
     const skillCategories = [
       {
@@ -85,14 +71,8 @@ const Skills = () => {
     ]
   
     return (
-      <section id="skills" className="py-12 px-4 bg-gradient-to-br from-indigo-50 via-purple-50 to-blue-50 relative overflow-hidden">
-        {/* Simple background decoration */}
-        <div className="absolute inset-0">
-          <div className="absolute top-20 right-20 w-4 h-4 bg-blue-400/30 rotate-45 animate-bounce delay-300"></div>
-          <div className="absolute bottom-20 left-20 w-3 h-3 bg-purple-400/30 rounded-full animate-bounce delay-700"></div>
-        </div>
-        
-        <div className="max-w-6xl mx-auto relative z-10">
+      <section id="skills" className="py-12 px-4 bg-slate-50">
+        <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <div className="inline-block px-4 py-2 bg-blue-100 border border-blue-200 rounded-full text-blue-700 text-sm font-medium mb-4">
               <FaCogs className="inline mr-2" />
@@ -110,84 +90,32 @@ const Skills = () => {
             {skillCategories.map((category, index) => (
               <div
                 key={index}
-                className="group bg-white/90 backdrop-blur-sm p-6 rounded-xl shadow-xl hover:shadow-2xl hover:-translate-y-3 hover:rotate-1 transition-all duration-500 border border-white/50 relative overflow-hidden transform hover:scale-105"
-                style={{
-                  background: `linear-gradient(135deg, ${category.color === 'blue' ? 'rgba(59, 130, 246, 0.1)' : category.color === 'purple' ? 'rgba(147, 51, 234, 0.1)' : category.color === 'green' ? 'rgba(34, 197, 94, 0.1)' : 'rgba(249, 115, 22, 0.1)'}, rgba(255, 255, 255, 0.9))`,
-                  animationDelay: `${index * 0.2}s`,
-                  transform: `perspective(1000px) rotateX(${hoveredCategory === index ? '5deg' : '0deg'})`
-                }}
-                onMouseEnter={() => setHoveredCategory(index)}
-                onMouseLeave={() => setHoveredCategory(null)}
+                className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-slate-200"
               >
-                <div className={`absolute inset-0 bg-gradient-to-br ${category.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-500`}></div>
-                <div className="relative z-10">
-                  <div className="flex items-center mb-4">
-                    <div className={`p-3 rounded-lg bg-gradient-to-br ${category.gradient} text-white mr-3 transform group-hover:scale-110 transition-transform duration-300`}>
-                      {category.icon}
-                    </div>
-                    <h3 className="text-lg font-bold text-slate-800 group-hover:text-slate-900 transition-colors duration-300">
-                      {category.title}
-                    </h3>
+                <div className="flex items-center mb-4">
+                  <div className={`p-3 rounded-lg bg-gradient-to-br ${category.gradient} text-white mr-3`}>
+                    {category.icon}
                   </div>
-                  
-                  <p className="text-xs text-slate-600 mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    {category.description}
-                  </p>
-                  
-                  <div className="space-y-3">
+                  <h3 className="text-lg font-bold text-slate-800">
+                    {category.title}
+                  </h3>
+                </div>
+                
+                <div className="space-y-3">
                     {category.skills.map((skill, idx) => (
                       <div
                         key={idx}
-                        className="group/skill relative"
-                        onMouseEnter={() => setHoveredSkill(`${index}-${idx}`)}
-                        onMouseLeave={() => setHoveredSkill(null)}
+                        className="flex items-center gap-3 p-3 rounded-lg hover:bg-slate-50 transition-colors duration-200"
                       >
-                        <div className="flex items-center justify-between mb-1">
-                          <div className="flex items-center gap-2">
-                            <span className={`text-${category.color}-500 text-sm`}>
-                              {skill.icon}
-                            </span>
-                            <span className="text-sm font-medium text-slate-700">
-                              {skill.name}
-                            </span>
-                          </div>
-                          <span className="text-xs text-slate-500 font-medium">
-                            {skill.level}%
-                          </span>
+                        <div className={`p-2 rounded-lg bg-gradient-to-r ${category.gradient} text-white`}>
+                          {skill.icon}
                         </div>
-                        
-                        {/* Progress bar */}
-                        <div className="w-full bg-slate-200 rounded-full h-2 overflow-hidden relative group-hover:scale-105 transition-transform duration-300">
-                          <div 
-                            className={`h-full bg-gradient-to-r ${category.gradient} rounded-full transition-all duration-1000 ease-out relative overflow-hidden`}
-                            style={{ 
-                              width: `${skill.level}%`,
-                              transitionDelay: `${idx * 100}ms`
-                            }}
-                          >
-                            {/* Shimmer effect */}
-                            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent transform -skew-x-12 animate-shimmer"></div>
-                          </div>
-                        </div>
-                        
-                        {/* Skill popup */}
-                        {hoveredSkill === `${index}-${idx}` && (
-                          <div className="absolute -top-16 left-1/2 transform -translate-x-1/2 bg-slate-800 text-white p-2 rounded-lg shadow-2xl z-50 min-w-max animate-bounce">
-                            <div className="text-xs font-semibold">{skill.name}</div>
-                            <div className="text-xs text-blue-300">{skill.level}% Proficiency</div>
-                            <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full">
-                              <div className="w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-slate-800"></div>
-                            </div>
-                          </div>
-                        )}
+                        <span className="text-sm font-medium text-slate-700">
+                          {skill.name}
+                        </span>
                       </div>
                     ))}
                   </div>
-                </div>
-                
-                {/* Decorative elements */}
-                <div className="absolute -top-3 -right-3 w-16 h-16 bg-gradient-to-br from-blue-100 to-purple-100 rounded-full blur-xl opacity-0 group-hover:opacity-50 transition-opacity duration-500"></div>
-                <div className="absolute -bottom-3 -left-3 w-12 h-12 bg-gradient-to-br from-green-100 to-blue-100 rounded-full blur-lg opacity-0 group-hover:opacity-50 transition-opacity duration-500"></div>
               </div>
             ))}
           </div>

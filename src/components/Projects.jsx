@@ -94,14 +94,8 @@ const Projects = () => {
     ]
   
     return (
-      <section id="projects" className="py-20 px-4 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 relative overflow-hidden">
-        {/* Background decoration */}
-        <div className="absolute inset-0">
-          <div className="absolute w-72 h-72 bg-blue-200/20 rounded-full blur-3xl -top-36 -right-36"></div>
-          <div className="absolute w-72 h-72 bg-purple-200/20 rounded-full blur-3xl -bottom-36 -left-36"></div>
-        </div>
-        
-        <div className="max-w-7xl mx-auto relative z-10">
+      <section id="projects" className="py-20 px-4 bg-slate-50">
+        <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <div className="inline-block px-4 py-2 bg-blue-100 border border-blue-200 rounded-full text-blue-700 text-sm font-medium mb-6">
               <FaCode className="inline mr-2" />

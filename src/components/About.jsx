@@ -56,14 +56,8 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-20 px-4 bg-gradient-to-br from-blue-50 via-slate-50 to-indigo-50 relative overflow-hidden">
-      {/* Background decoration */}
-      <div className="absolute inset-0">
-        <div className="absolute w-80 h-80 bg-blue-400/20 rounded-full blur-3xl -top-40 -left-40 animate-pulse"></div>
-        <div className="absolute w-80 h-80 bg-purple-400/20 rounded-full blur-3xl -bottom-40 -right-40 animate-pulse delay-1000"></div>
-      </div>
-
-      <div className="max-w-6xl mx-auto relative z-10">
+    <section id="about" className="py-20 px-4 bg-white">
+      <div className="max-w-6xl mx-auto">
         {/* A Bit About Me Section */}
         <div className="mb-16">
           <div className="flex flex-col lg:flex-row items-start gap-8">
