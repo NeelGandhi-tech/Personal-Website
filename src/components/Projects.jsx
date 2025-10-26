@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { FaGithub, FaExternalLinkAlt, FaBrain, FaChartLine, FaCogs, FaCode } from 'react-icons/fa'
+import { FaGithub, FaExternalLinkAlt, FaBrain, FaChartLine, FaCogs, FaCode, FaRocket, FaCog } from 'react-icons/fa'
 
 const Projects = () => {
     const [hoveredProject, setHoveredProject] = useState(null)
@@ -61,7 +61,7 @@ const Projects = () => {
         gradient: 'from-indigo-500 to-purple-500',
         status: 'Live Website',
         impact: 'Educational Platform',
-        backgroundImage: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+        backgroundImage: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
         githubLink: 'https://github.com/NeelGandhi-tech/SAT-Class',
         demoLink: 'https://app.netlify.com/projects/sat-bears/overview'
       },
@@ -74,7 +74,7 @@ const Projects = () => {
         gradient: 'from-orange-500 to-red-500',
         status: 'Live Website',
         impact: 'University Platform',
-        backgroundImage: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+        backgroundImage: 'https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
         githubLink: 'https://github.com/NeelGandhi-tech/Innovate-Berkeley',
         demoLink: 'https://berkeleyinnovate.com/'
       },

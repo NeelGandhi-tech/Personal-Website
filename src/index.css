@@ -180,3 +180,48 @@ body {
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
+
+/* Custom color classes */
+.accent {
+  color: #3b82f6;
+}
+
+.bg-accent {
+  background-color: #3b82f6;
+}
+
+.text-accent {
+  color: #3b82f6;
+}
+
+.primary {
+  color: #1e40af;
+}
+
+.bg-primary {
+  background-color: #1e40af;
+}
+
+.text-primary {
+  color: #1e40af;
+}
+
+.dark {
+  background-color: #1e293b;
+}
+
+.bg-dark {
+  background-color: #1e293b;
+}
+
+.text-dark {
+  color: #1e293b;
+}
+
+.lightBlue {
+  color: #60a5fa;
+}
+
+.text-lightBlue {
+  color: #60a5fa;
+}
