@@ -79,16 +79,16 @@ const Projects = () => {
         demoLink: 'https://berkeleyinnovate.com/'
       },
       {
-        title: 'Coming Soon',
+        title: 'CatanML',
         description:
-          'Stay tuned for more exciting projects! I\'m constantly working on new innovations and will be adding more projects here soon.',
-        tech: ['TBA'],
-        icon: <FaCog />,
-        gradient: 'from-gray-500 to-slate-500',
-        status: 'In Development',
-        impact: 'Future Innovation',
-        backgroundImage: 'https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
-        githubLink: null,
+          'Machine learning model that predicts optimal opening settlement positions in Catan. Uses Random Forest, Gradient Boosting, and Neural Networks to analyze board configurations, considering resource production, pip counts, and diversity. Achieves R² ~0.96 with expert heuristic-based training.',
+        tech: ['Python', 'scikit-learn', 'PyTorch', 'Random Forest', 'XGBoost'],
+        icon: <FaBrain />,
+        gradient: 'from-amber-500 to-orange-500',
+        status: 'ML Model',
+        impact: 'R² ~0.96 Accuracy',
+        backgroundImage: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+        githubLink: 'https://github.com/NeelGandhi-tech/CatanML',
         demoLink: null
       }
     ]
