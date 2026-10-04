@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+
 import { FaCode, FaCogs, FaTools, FaRocket, FaPython, FaJs, FaJava, FaReact, FaNode, FaDocker, FaGitAlt, FaBrain, FaDatabase, FaCloud, FaMobile } from 'react-icons/fa'
 
 const Skills = () => {

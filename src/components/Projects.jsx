@@ -1,18 +1,9 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { FaGithub, FaExternalLinkAlt, FaBrain, FaChartLine, FaCogs, FaCode, FaRocket, FaCog } from 'react-icons/fa'
 
 const Projects = () => {
     const [hoveredProject, setHoveredProject] = useState(null)
-    const [animatedProjects, setAnimatedProjects] = useState(false)
-
-    useEffect(() => {
-        const timer = setTimeout(() => {
-            setAnimatedProjects(true)
-        }, 300)
-        return () => clearTimeout(timer)
-    }, [])
-
-    const projects = [
+const projects = [
       {
         title: 'NeuroEcho',
         description:

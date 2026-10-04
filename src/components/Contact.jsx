@@ -1,18 +1,9 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { FaEnvelope, FaPhone, FaLinkedin, FaGithub, FaMapMarkerAlt, FaCalendarAlt, FaCode, FaRocket } from 'react-icons/fa'
 
 const Contact = () => {
   const [hoveredContact, setHoveredContact] = useState(null)
-  const [animatedContact, setAnimatedContact] = useState(false)
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setAnimatedContact(true)
-    }, 500)
-    return () => clearTimeout(timer)
-  }, [])
-
-  const contactInfo = [
+const contactInfo = [
     {
       icon: <FaEnvelope />,
       label: 'neelgandhi5416@berkeley.edu',
