@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { FiArrowUpRight, FiArrowDown, FiGithub, FiLinkedin, FiSearch, FiMenu, FiX, FiArrowRight } from 'react-icons/fi'
 import { projects, categories } from './data/projects'
 import Experience from './components/Experience'
@@ -17,6 +17,19 @@ function ProjectArt({ kind }) {
 }
 
 function App() {
+  useEffect(() => {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) return
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('enter-view')
+          observer.unobserve(entry.target)
+        }
+      })
+    }, { threshold: 0.12 })
+    document.querySelectorAll('.section-heading, .featured-card, .about').forEach(element => observer.observe(element))
+    return () => observer.disconnect()
+  }, [])
   const [menuOpen, setMenuOpen] = useState(false)
   const [category, setCategory] = useState('All projects')
   const [query, setQuery] = useState('')
@@ -34,10 +47,10 @@ function App() {
       <section className="hero container" id="home">
         <div className="hero-copy"><div className="eyebrow"><span className="status-dot" /> EECS @ UC BERKELEY</div>
           <h1>Curiosity.<br />Code.<br /><span>Real-world impact.</span></h1>
-          <p className="hero-intro">I’m Neel Gandhi — a builder exploring the space between machine learning, thoughtful products, and the people who use them.</p>
+          <p className="hero-intro">I’m Neel Gandhi. I build useful things, look for patterns in the game, and bring a little competitive curiosity to both.</p>
           <div className="hero-actions"><a className="button button-dark" href="#projects">Explore my work <FiArrowDown /></a><a className="text-link" href="#about">A little about me <FiArrowUpRight /></a></div>
         </div>
-        <div className="hero-portrait"><div className="portrait-frame"><img src="/407A0016.JPG" alt="Neel Gandhi" fetchPriority="high" /><div className="portrait-label"><span>NEEL GANDHI</span><span>BERKELEY, CA ↗</span></div></div><div className="portrait-note"><span className="note-star">✳</span><span>Always curious.<br />Always building.</span></div><span className="portrait-index">01 — A WORK IN PROGRESS, IN THE BEST WAY.</span></div>
+        <div className="hero-portrait"><div className="portrait-frame"><img src="/407A0016.JPG" alt="Neel Gandhi" fetchPriority="high" /><div className="portrait-label"><span>NEEL GANDHI</span><span>BERKELEY, CA ↗</span></div></div><div className="portrait-note"><span className="note-star">✳</span><span>Builder by nature.<br />Game for anything.</span></div><span className="portrait-index">BERKELEY / CODE / A LITTLE FRIENDLY COMPETITION</span></div>
       </section>
       <div className="focus-strip"><div className="container"><span>IDEAS INTO THINGS THAT WORK</span><p>Machine learning <i>✳</i> Full-stack development <i>✳</i> Human-centered products</p></div></div>
       <section className="section container" id="projects">
@@ -53,7 +66,7 @@ function App() {
         <a className="github-link" href={github} target="_blank" rel="noreferrer"><FiGithub /> There’s more on GitHub <FiArrowUpRight /></a>
       </div></section>
       <Experience />
-      <section className="about section container" id="about"><div><span className="eyebrow">04 / THE PERSON BEHIND THE CODE</span><h2>Good questions.<br />Useful things.<br /><em>That’s the idea.</em></h2></div><div className="about-copy"><p className="about-lead">I’m a EECS student at UC Berkeley who likes turning “what if?” into something you can actually use.</p><p>My projects follow my curiosity: sports analytics, strategy games, healthcare tools, education, and the communities around me. I enjoy working across the stack, from the model behind a prediction to the interface that makes it understandable.</p><p>I’m especially interested in machine learning and human-centered software, including exploring cognitive-assistance ideas through NeuroEcho.</p><div className="toolbox"><span className="eyebrow">MY TOOLBOX</span><div className="tags">{['Python', 'JavaScript', 'React', 'Flask', 'SQL', 'scikit-learn', 'PyTorch', 'Git'].map(t => <span key={t}>{t}</span>)}</div></div><a className="text-link" href="https://linkedin.com/in/neel-gandhi0" target="_blank" rel="noreferrer">More about my experience <FiArrowUpRight /></a></div></section>
+      <section className="about section container" id="about"><div><span className="eyebrow">04 / THE PERSON BEHIND THE CODE</span><h2>Good questions.<br />Useful things.<br /><em>That’s the idea.</em></h2></div><div className="about-copy"><p className="about-lead">I’m an EECS student at UC Berkeley who likes turning “what if?” into something you can actually use.</p><p>My projects follow my curiosity: sports analytics, strategy games, healthcare tools, education, and the communities around me. I enjoy working across the stack, from the model behind a prediction to the interface that makes it understandable.</p><p>I’m especially interested in machine learning and human-centered software, including exploring cognitive-assistance ideas through NeuroEcho.</p><div className="toolbox"><span className="eyebrow">MY TOOLBOX</span><div className="tags">{['Python', 'JavaScript', 'React', 'Flask', 'SQL', 'scikit-learn', 'PyTorch', 'Git'].map(t => <span key={t}>{t}</span>)}</div></div><a className="text-link" href="https://linkedin.com/in/neel-gandhi0" target="_blank" rel="noreferrer">More about my experience <FiArrowUpRight /></a></div></section>
       <section className="contact" id="contact"><div className="container"><span className="eyebrow">HAVE AN IDEA? A GOOD QUESTION?</span><div className="contact-main"><h2>Let’s build<br /><em>something good.</em></h2><a className="contact-arrow" href={email} aria-label="Email Neel Gandhi"><FiArrowUpRight /></a></div><div className="contact-bottom"><a href={email}>neelgandhi5416@berkeley.edu <FiArrowUpRight /></a><p>For collaborations, opportunities, or just a hello.</p></div></div></section>
     </main>
     <footer className="container footer"><a className="wordmark" href="#home">neel<span>.</span></a><p>© {new Date().getFullYear()} Neel Gandhi · Built with curiosity.</p><div><a href={github} target="_blank" rel="noreferrer" aria-label="GitHub"><FiGithub /></a><a href="https://linkedin.com/in/neel-gandhi0" target="_blank" rel="noreferrer" aria-label="LinkedIn"><FiLinkedin /></a><a href="#home" className="back-top">Back to top ↑</a></div></footer>

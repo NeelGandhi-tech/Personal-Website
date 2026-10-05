@@ -1196,3 +1196,35 @@ h2 {
   .education-note { margin-left: 23px; display: block; }
   .education-note .eyebrow { margin-bottom: 11px; }
 }
+
+/* Small, intentional bursts of movement. Nothing loops indefinitely. */
+@keyframes arrive { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes underline-in { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+@keyframes bar-rise { from { transform: scaleY(.25); } to { transform: scaleY(1); } }
+@keyframes route-draw { from { stroke-dashoffset: 450; } to { stroke-dashoffset: 0; } }
+.hero-copy > * { animation: arrive .75s both; }
+.hero-copy h1 { animation-delay: .1s; }
+.hero-copy .hero-intro { animation-delay: .2s; }
+.hero-copy .hero-actions { animation-delay: .3s; }
+.hero-portrait { animation: arrive 1s .2s both; }
+.hero h1 > span { position: relative; }
+.hero h1 > span::after { content: ''; position: absolute; height: 6px; background: var(--lime); left: 0; right: 0; bottom: -8px; transform-origin: left; animation: underline-in .8s .7s both; border-radius: 50%; }
+.portrait-note { transition: transform .35s ease; }
+.hero-portrait:hover .portrait-note { transform: rotate(0deg) translateY(-5px); }
+.note-star { display: inline-block; transition: transform .7s ease; }
+.hero-portrait:hover .note-star { transform: rotate(90deg); }
+.enter-view { animation: arrive .65s both; }
+.featured-card:nth-child(2).enter-view { animation-delay: .1s; }
+.featured-card:nth-child(3).enter-view { animation-delay: .2s; }
+.chart-bars i { transform-origin: bottom; }
+.art-link:hover .chart-bars i, .art-link:focus-visible .chart-bars i { animation: bar-rise .65s both; }
+.chart-bars i:nth-child(2n) { animation-delay: .09s !important; }
+.hex { transition: translate .3s; }
+.art-link:hover .hex:nth-child(odd), .art-link:focus-visible .hex:nth-child(odd) { translate: 0 -6px; }
+.art-link:hover .graph-art > path, .art-link:focus-visible .graph-art > path { stroke-dasharray: 450; animation: route-draw 1.2s both; }
+.timeline-details:not([hidden]) .timeline-detail-inner { animation: arrive .3s both; }
+.button svg, .text-link svg { transition: transform .2s; }
+.button:hover svg { transform: translateY(3px); }
+.text-link:hover svg { transform: translate(2px,-2px); }
+@media (max-width: 760px) { .hero h1 > span::after { height: 4px; bottom: -5px; } }
+@media (prefers-reduced-motion: reduce) { .hero h1 > span::after { transform: scaleX(1); } }
